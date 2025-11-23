@@ -1,0 +1,1113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$FELIX - The Legendary Cat</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(180deg, #4A5F7F 0%, #2E3F5C 50%, #1A2332 100%);
+            color: #fff;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            width: 400px;
+            height: 400px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            top: 10%;
+            left: -200px;
+            z-index: 0;
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 50%;
+            bottom: 15%;
+            right: -150px;
+            z-index: 0;
+        }
+
+        /* Header */
+        header {
+            background: rgba(26, 35, 50, 0.95);
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            border-bottom: 3px solid rgba(255, 255, 255, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: url('https://cdn.prod.website-files.com/6922ebff015a9b454ccf6cf7/6922f34c33f5e2ba6f16fb87_59f6b437-37e5-4970-829a-970e958888b4.png');
+            background-size: cover;
+            background-position: center;
+            border-radius: 50%;
+            border: 2px solid #fff;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0.5rem 1.5rem;
+            border: 3px solid #fff;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
+
+        .nav-links a:hover {
+            background: #fff;
+            color: #4A3F35;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8rem 2rem 4rem;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            max-width: 1400px;
+            align-items: center;
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .phone-frame {
+            background: #000;
+            border-radius: 40px;
+            padding: 15px;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+            max-width: 450px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .phone-frame::before {
+            content: '';
+            position: absolute;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 30px;
+            background: #000;
+            border-radius: 0 0 20px 20px;
+            z-index: 10;
+        }
+
+        .phone-frame::after {
+            content: '';
+            position: absolute;
+            top: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 15px;
+            height: 15px;
+            background: #333;
+            border-radius: 50%;
+            z-index: 11;
+        }
+
+        .phone-frame img,
+        .phone-frame video {
+            width: 100%;
+            height: 600px;
+            object-fit: cover;
+            border-radius: 30px;
+            display: block;
+        }
+
+        .hero-text {
+            text-align: left;
+        }
+
+        .badge {
+            background: #fff;
+            color: #1a1a1a;
+            padding: 0.7rem 2rem;
+            border-radius: 30px;
+            display: inline-block;
+            font-weight: 900;
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            border: 3px solid #000;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero-text h1 {
+            font-size: 7rem;
+            font-weight: 900;
+            line-height: 0.9;
+            margin-bottom: 0.2rem;
+            color: #fff;
+            text-transform: uppercase;
+            -webkit-text-stroke: 3px #000;
+            text-stroke: 3px #000;
+            paint-order: stroke fill;
+            letter-spacing: -3px;
+        }
+
+        .hero-text h2 {
+            font-size: 3.5rem;
+            color: #2a2a2a;
+            margin-bottom: 2rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .btn {
+            padding: 1.2rem 2.5rem;
+            border-radius: 15px;
+            font-size: 1.15rem;
+            font-weight: 900;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-large {
+            background: #fff;
+            color: #000;
+            border: 4px solid #000;
+        }
+
+        .btn-large:hover {
+            background: #000;
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .btn-secondary {
+            background: #fff;
+            color: #000;
+            border: 4px solid #000;
+        }
+
+        .btn-secondary:hover {
+            background: #000;
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .contract-section {
+            display: grid;
+            grid-template-columns: 1fr auto auto;
+            gap: 0.75rem;
+            align-items: center;
+        }
+
+        .contract-input {
+            background: #fff;
+            border: 4px solid #000;
+            border-radius: 15px;
+            padding: 1rem 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .contract-label {
+            font-size: 0.75rem;
+            font-weight: 900;
+            color: #000;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .contract-address {
+            font-size: 0.9rem;
+            color: #000;
+            font-weight: 600;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .contract-section .btn-icon {
+            background: #333;
+            color: #fff;
+            border: 4px solid #000;
+            padding: 1rem 1.5rem;
+            border-radius: 15px;
+            cursor: pointer;
+            font-weight: 900;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .contract-section .btn-icon:hover {
+            background: #000;
+            transform: translateY(-2px);
+        }
+
+        /* Section Styling */
+        section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        section h2 {
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Meme Generator Section */
+        .meme-generator {
+            background: rgba(26, 35, 50, 0.5);
+            padding: 4rem 2rem;
+        }
+
+        .meme-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .meme-button {
+            background: #fff;
+            color: #1A2332;
+            padding: 1rem 2.5rem;
+            border-radius: 30px;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 2rem;
+            border: 4px solid #1A2332;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .meme-button:hover {
+            background: #1A2332;
+            color: #fff;
+        }
+
+        .meme-preview {
+            background: #D4D9E3;
+            border-radius: 30px;
+            padding: 2rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+            border: 4px solid #1A2332;
+        }
+
+        .meme-preview-content {
+            display: grid;
+            grid-template-columns: 1fr 250px;
+            gap: 2rem;
+            align-items: start;
+        }
+
+        .meme-canvas-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .meme-controls {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .control-btn {
+            background: #fff;
+            color: #1A2332;
+            padding: 0.75rem 1.5rem;
+            border-radius: 12px;
+            border: 3px solid #1A2332;
+            font-weight: 900;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .control-btn:hover {
+            background: #1A2332;
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
+        .control-btn.danger {
+            background: #E74C3C;
+            color: #fff;
+            border-color: #C0392B;
+        }
+
+        .control-btn.danger:hover {
+            background: #C0392B;
+        }
+
+        .layer-controls {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            border-radius: 12px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .layer-controls label {
+            color: #fff;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-right: 0.5rem;
+            text-transform: uppercase;
+        }
+
+        .layer-controls input[type="range"] {
+            flex: 1;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 5px;
+            outline: none;
+        }
+
+        .layer-controls input[type="range"]::-webkit-slider-thumb {
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            background: #fff;
+            border: 2px solid #1A2332;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .layer-controls input[type="range"]::-moz-range-thumb {
+            width: 18px;
+            height: 18px;
+            background: #fff;
+            border: 2px solid #1A2332;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .cat-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .cat-image-container {
+            background: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 4px solid transparent;
+            position: relative;
+        }
+
+        .cat-image-container:hover {
+            border-color: #000;
+            transform: scale(1.02);
+        }
+
+        .cat-image-container.active {
+            border-color: #000;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .cat-image-container img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .meme-canvas {
+            background: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            border: 4px solid #000;
+        }
+
+        .meme-canvas img {
+            max-width: 100%;
+            max-height: 500px;
+            object-fit: contain;
+        }
+
+        .meme-accessories {
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 15px;
+            border: 4px solid #000;
+        }
+
+        .accessories-header {
+            color: #000;
+            font-size: 1.2rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .accessory-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.5rem;
+            max-height: 450px;
+            overflow-y: auto;
+            padding-right: 0.5rem;
+        }
+
+        .accessory-grid::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .accessory-grid::-webkit-scrollbar-track {
+            background: #f0f0f0;
+            border-radius: 10px;
+        }
+
+        .accessory-grid::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 10px;
+        }
+
+        .accessory-item {
+            width: 100%;
+            aspect-ratio: 1;
+            background: #f0f0f0;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: 2px solid transparent;
+            overflow: hidden;
+        }
+
+        .accessory-item:hover {
+            transform: scale(1.05);
+            border-color: #000;
+        }
+
+        .accessory-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        /* Story Section */
+        .story-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .story-card {
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 20px;
+            border: 3px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .story-card.dark {
+            background: rgba(26, 35, 50, 0.7);
+            border-color: rgba(255, 255, 255, 0.15);
+        }
+
+        .story-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .story-card p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #D4D9E3;
+        }
+
+        /* Tokenomics Section */
+        .tokenomics {
+            background: rgba(26, 35, 50, 0.8);
+            padding: 4rem 2rem;
+            border-top: 3px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 3px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .tokenomics-badge {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .tokenomics-badge span {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 0.75rem 2rem;
+            border-radius: 30px;
+            font-size: 1.2rem;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            font-weight: 900;
+            letter-spacing: 2px;
+        }
+
+        .token-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto 2rem;
+        }
+
+        .stat-card {
+            background: rgba(26, 35, 50, 0.9);
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            border: 3px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: #D4D9E3;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+        }
+
+        .stat-value {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .stat-sublabel {
+            font-size: 0.9rem;
+            color: #D4D9E3;
+            margin-top: 0.5rem;
+        }
+
+        .token-features {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 1.5rem;
+            border-radius: 20px;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            border: 3px solid rgba(255, 255, 255, 0.25);
+        }
+
+        .token-features p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #fff;
+        }
+
+        /* Join Section */
+        .join-section {
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+
+        .social-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .social-btn {
+            background: rgba(255, 255, 255, 0.15);
+            color: #fff;
+            padding: 1rem 2rem;
+            border-radius: 15px;
+            text-decoration: none;
+            font-weight: bold;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .social-btn:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-2px);
+        }
+
+        .disclaimer {
+            background: rgba(255, 255, 255, 0.95);
+            color: #1A2332;
+            padding: 1.5rem;
+            border-radius: 15px;
+            max-width: 800px;
+            margin: 2rem auto 0;
+            border: 3px solid #1A2332;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(26, 35, 50, 0.95);
+            padding: 2rem;
+            text-align: center;
+            color: #D4D9E3;
+            border-top: 3px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-text {
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 4.5rem;
+            }
+
+            .hero-text h2 {
+                font-size: 2.5rem;
+            }
+
+            .btn-row {
+                grid-template-columns: 1fr;
+            }
+
+            .contract-section {
+                grid-template-columns: 1fr;
+            }
+
+            .contract-section .btn-icon {
+                width: 100%;
+            }
+
+            .token-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .meme-preview-content {
+                grid-template-columns: 1fr;
+            }
+
+            .cat-images {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .accessory-grid {
+                grid-template-columns: repeat(6, 1fr);
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero-text h1 {
+                font-size: 3rem;
+                -webkit-text-stroke: 2px #000;
+            }
+
+            .hero-text h2 {
+                font-size: 1.8rem;
+            }
+
+            section h2 {
+                font-size: 2rem;
+            }
+
+            .phone-frame {
+                max-width: 320px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="#" class="logo">
+                <div class="logo-icon"></div>
+                $FELIX
+            </a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#meme">Meme Maker</a></li>
+                <li><a href="#story">Story</a></li>
+                <li><a href="#tokenomics">Tokenomics</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-image">
+                <div class="phone-frame">
+                    <img src="https://cdn.prod.website-files.com/6922ebff015a9b454ccf6cf7/6922ecf44923fc23e2d1b8e7_cat-dance-dancing-cat.gif" alt="Felix the Cat dancing" id="heroGif">
+                </div>
+            </div>
+            <div class="hero-text">
+                <span class="badge">THE LEGENDARY CARTOON CAT</span>
+                <h1>FELIX</h1>
+                <h2>THE CAT</h2>
+                <div class="cta-buttons">
+                    <a href="#" class="btn btn-large">Meet Felix, The Legendary Cat</a>
+                    <div class="btn-row">
+                        <a href="#" class="btn btn-secondary">BUY $FELIX</a>
+                        <a href="#" class="btn btn-secondary">MAKE YOUR MEME</a>
+                    </div>
+                </div>
+                <div class="contract-section">
+                    <div class="contract-input">
+                        <span class="contract-label">CONTRACT</span>
+                        <span class="contract-address">Hd69w43Wm0cQZW9h4BoZVL8w6As...</span>
+                    </div>
+                    <button class="btn-icon">COPY CA</button>
+                    <button class="btn-icon">𝕏</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meme Generator Section -->
+    <section id="meme" class="meme-generator">
+        <div class="meme-content">
+            <h2>MEME GENERATOR</h2>
+            <a href="#" class="meme-button">Make viral memes, spread $FELIX</a>
+            <div class="meme-preview">
+                <div class="meme-preview-content">
+                    <div class="meme-canvas-wrapper">
+                        <div class="meme-controls">
+                            <button class="control-btn" onclick="addText()">ADD TEXT</button>
+                            <button class="control-btn" onclick="resetCanvas()">RESET</button>
+                            <button class="control-btn" onclick="downloadMeme()">DOWNLOAD</button>
+                        </div>
+                        
+                        <div class="cat-images">
+                            <div class="cat-image-container active" onclick="selectCat(1)">
+                                <img src="https://cdn.prod.website-files.com/6922ebff015a9b454ccf6cf7/6922f341d698ece6b76a3a31_8c4af6ec-ad90-4189-b38f-10068b4c27f7.png" alt="Felix Cat 1">
+                            </div>
+                            <div class="cat-image-container" onclick="selectCat(2)">
+                                <img src="https://cdn.prod.website-files.com/6922ebff015a9b454ccf6cf7/6922f356e6aa19f1c885dd6b_91687829-28de-4ed7-9bea-54ddc2e18bc2.png" alt="Felix Cat 2">
+                            </div>
+                        </div>
+                        
+                        <div class="meme-canvas" id="memeCanvas">
+                            <img src="https://cdn.prod.website-files.com/6922ebff015a9b454ccf6cf7/6922f341d698ece6b76a3a31_8c4af6ec-ad90-4189-b38f-10068b4c27f7.png" alt="Selected Cat" id="selectedCat">
+                        </div>
+                        
+                        <div class="layer-controls" id="layerControls" style="display: none;">
+                            <span style="color: #fff; font-weight: 900; margin-right: 1rem;">Edit Layer</span>
+                            <button class="control-btn danger" onclick="deleteLayer()">DELETE</button>
+                            <label>Size</label>
+                            <input type="range" min="50" max="200" value="100" id="sizeSlider" oninput="updateLayerSize()">
+                            <label>Rotate</label>
+                            <input type="range" min="0" max="360" value="0" id="rotateSlider" oninput="updateLayerRotation()">
+                        </div>
+                    </div>
+                    <div class="meme-accessories">
+                        <h3 class="accessories-header">CHOOSE</h3>
+                        <div class="accessory-grid">
+                            <!-- Placeholder accessory items - you'll add your accessory images here -->
+                            <div class="accessory-item"></div>
+                            <div class="accessory-item"></div>
+                            <div class="accessory-item"></div>
+                            <div class="accessory-item"></div>
+                            <div class="accessory-item"></div>
+                            <div class="accessory-item"></div>
+                            <div class="accessory-item"></div>
+                            <div class="accessory-item"></div>
+                            <div class="accessory-item"></div>
+                            <div class="accessory-item"></div>
+                            <div class="accessory-item"></div>
+                            <div class="accessory-item"></div>
+                            <div class="accessory-item"></div>
+                            <div class="accessory-item"></div>
+                            <div class="accessory-item"></div>
+                            <div class="accessory-item"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        let selectedLayer = null;
+        
+        function selectCat(catNumber) {
+            // Remove active class from all containers
+            document.querySelectorAll('.cat-image-container').forEach(el => {
+                el.classList.remove('active');
+            });
+            
+            // Add active class to clicked container
+            event.currentTarget.classList.add('active');
+            
+            // Update the main canvas image
+            const selectedCatImg = document.getElementById('selectedCat');
+            if (catNumber === 1) {
+                selectedCatImg.src = 'https://cdn.prod.website-files.com/6922ebff015a9b454ccf6cf7/6922f341d698ece6b76a3a31_8c4af6ec-ad90-4189-b38f-10068b4c27f7.png';
+            } else {
+                selectedCatImg.src = 'https://cdn.prod.website-files.com/6922ebff015a9b454ccf6cf7/6922f356e6aa19f1c885dd6b_91687829-28de-4ed7-9bea-54ddc2e18bc2.png';
+            }
+        }
+        
+        function addText() {
+            const canvas = document.getElementById('memeCanvas');
+            const text = document.createElement('div');
+            text.contentEditable = true;
+            text.textContent = 'EDIT ME';
+            text.style.position = 'absolute';
+            text.style.fontSize = '32px';
+            text.style.fontWeight = '900';
+            text.style.color = '#fff';
+            text.style.textShadow = '3px 3px 0px #000';
+            text.style.padding = '10px';
+            text.style.cursor = 'move';
+            text.style.userSelect = 'none';
+            text.style.top = '50%';
+            text.style.left = '50%';
+            text.style.transform = 'translate(-50%, -50%)';
+            text.className = 'meme-layer';
+            
+            text.onclick = function(e) {
+                e.stopPropagation();
+                selectLayer(text);
+            };
+            
+            canvas.appendChild(text);
+            makeDraggable(text);
+            selectLayer(text);
+        }
+        
+        function makeDraggable(element) {
+            let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+            element.onmousedown = dragMouseDown;
+            
+            function dragMouseDown(e) {
+                e = e || window.event;
+                e.preventDefault();
+                pos3 = e.clientX;
+                pos4 = e.clientY;
+                document.onmouseup = closeDragElement;
+                document.onmousemove = elementDrag;
+            }
+            
+            function elementDrag(e) {
+                e = e || window.event;
+                e.preventDefault();
+                pos1 = pos3 - e.clientX;
+                pos2 = pos4 - e.clientY;
+                pos3 = e.clientX;
+                pos4 = e.clientY;
+                element.style.top = (element.offsetTop - pos2) + "px";
+                element.style.left = (element.offsetLeft - pos1) + "px";
+            }
+            
+            function closeDragElement() {
+                document.onmouseup = null;
+                document.onmousemove = null;
+            }
+        }
+        
+        function selectLayer(layer) {
+            selectedLayer = layer;
+            document.getElementById('layerControls').style.display = 'flex';
+        }
+        
+        function deleteLayer() {
+            if (selectedLayer) {
+                selectedLayer.remove();
+                selectedLayer = null;
+                document.getElementById('layerControls').style.display = 'none';
+            }
+        }
+        
+        function updateLayerSize() {
+            if (selectedLayer) {
+                const size = document.getElementById('sizeSlider').value;
+                selectedLayer.style.fontSize = (32 * size / 100) + 'px';
+            }
+        }
+        
+        function updateLayerRotation() {
+            if (selectedLayer) {
+                const rotation = document.getElementById('rotateSlider').value;
+                const currentTransform = selectedLayer.style.transform || '';
+                const baseTransform = 'translate(-50%, -50%)';
+                selectedLayer.style.transform = baseTransform + ` rotate(${rotation}deg)`;
+            }
+        }
+        
+        function resetCanvas() {
+            const canvas = document.getElementById('memeCanvas');
+            const layers = canvas.querySelectorAll('.meme-layer');
+            layers.forEach(layer => layer.remove());
+            selectedLayer = null;
+            document.getElementById('layerControls').style.display = 'none';
+        }
+        
+        function downloadMeme() {
+            // This is a placeholder - actual implementation would use html2canvas or similar
+            alert('Download functionality would capture the canvas and save as image');
+        }
+    </script>
+
+    <!-- Story Section -->
+    <section id="story">
+        <h2>THE STORY</h2>
+        <div class="story-cards">
+            <div class="story-card">
+                <h3>The Origin</h3>
+                <p>Born in 1919, Felix the Cat became the world's first animated superstar. A century later, this legendary feline walks again - not on film reels, but on the blockchain. Felix has evolved from silent films to the Solana network.</p>
+            </div>
+            <div class="story-card dark">
+                <h3>The Mission</h3>
+                <p>Felix brings the magic of classic animation to the modern age. With his iconic bag of tricks and timeless charm, he's here to unite cartoon lovers and crypto enthusiasts. Felix isn't just a meme - he's a piece of animation history.</p>
+            </div>
+            <div class="story-card dark">
+                <h3>The Rise</h3>
+                <p>From the golden age of cartoons to the digital frontier, Felix kept on walking. That iconic silhouette, that mischievous grin - now prowling the Solana blockchain, bringing joy and fortune to a new generation of fans.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tokenomics Section -->
+    <section id="tokenomics" class="tokenomics">
+        <div class="tokenomics-badge">
+            <span>FAIR LAUNCH</span>
+        </div>
+        <h2>TOKENOMICS</h2>
+        <div class="token-stats">
+            <div class="stat-card">
+                <div class="stat-label">TOTAL SUPPLY</div>
+                <div class="stat-value">1B</div>
+                <div class="stat-sublabel">Fixed Supply</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">TAX</div>
+                <div class="stat-value">0/0</div>
+                <div class="stat-sublabel">Buy / Sell</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">LIQUIDITY</div>
+                <div class="stat-value">BURNT</div>
+                <div class="stat-sublabel">Forever Locked</div>
+            </div>
+        </div>
+        <div class="token-features">
+            <p><strong>100% Community Driven - No Team Tokens - Burnt LP - Renounced Contract</strong></p>
+        </div>
+    </section>
+
+    <!-- Join Section -->
+    <section class="join-section">
+        <h2>JOIN THE ADVENTURE</h2>
+        <p style="font-size: 1.3rem; margin-bottom: 2rem;">Follow Felix's journey</p>
+        <div class="social-buttons">
+            <a href="#" class="social-btn">𝕏</a>
+            <a href="#" class="social-btn">CHART</a>
+        </div>
+        <div class="disclaimer">
+            <p><strong>$FELIX is a meme coin with no intrinsic value or expectation of financial returns. Always do your own research before investing.</strong></p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>2025 $FELIX - The Legendary Cat</p>
+    </footer>
+</body>
+</html>
