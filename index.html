@@ -486,6 +486,7 @@
             transition: all 0.3s ease;
             border: 4px solid transparent;
             position: relative;
+            aspect-ratio: 1;
         }
 
         .cat-image-container:hover {
@@ -500,9 +501,9 @@
 
         .cat-image-container img {
             width: 100%;
-            height: 200px;
+            height: 100%;
             object-fit: cover;
-            object-position: center 20%;
+            object-position: center;
             display: block;
         }
 
@@ -856,7 +857,7 @@
                         <span class="contract-address">Hd69w43Wm0cQZW9h4BoZVL8w6As...</span>
                     </div>
                     <button class="btn-icon">COPY CA</button>
-                    <button class="btn-icon">𝕏</button>
+                    <a href="https://x.com/Feelixonsolana" target="_blank" class="btn-icon" style="text-decoration: none; display: flex; align-items: center; justify-content: center;">𝕏</a>
                 </div>
             </div>
         </div>
@@ -901,23 +902,66 @@
                     <div class="meme-accessories">
                         <h3 class="accessories-header">CHOOSE</h3>
                         <div class="accessory-grid">
-                            <!-- Placeholder accessory items - you'll add your accessory images here -->
-                            <div class="accessory-item"></div>
-                            <div class="accessory-item"></div>
-                            <div class="accessory-item"></div>
-                            <div class="accessory-item"></div>
-                            <div class="accessory-item"></div>
-                            <div class="accessory-item"></div>
-                            <div class="accessory-item"></div>
-                            <div class="accessory-item"></div>
-                            <div class="accessory-item"></div>
-                            <div class="accessory-item"></div>
-                            <div class="accessory-item"></div>
-                            <div class="accessory-item"></div>
-                            <div class="accessory-item"></div>
-                            <div class="accessory-item"></div>
-                            <div class="accessory-item"></div>
-                            <div class="accessory-item"></div>
+                            <div class="accessory-item" onclick="addAccessory('https://cdn.prod.website-files.com/6922ebff015a9b454ccf6cf7/692554c24a01e45b99e5c2be_item_4_1.png')">
+                                <img src="https://cdn.prod.website-files.com/6922ebff015a9b454ccf6cf7/692554c24a01e45b99e5c2be_item_4_1.png" alt="Accessory">
+                            </div>
+                            <div class="accessory-item" onclick="addAccessory('https://cdn.prod.website-files.com/6922ebff015a9b454ccf6cf7/692554c24a01e45b99e5c2b9_item_1_1.png')">
+                                <img src="https://cdn.prod.website-files.com/6922ebff015a9b454ccf6cf7/692554c24a01e45b99e5c2b9_item_1_1.png" alt="Accessory">
+                            </div>
+                            <div class="accessory-item" onclick="addAccessory('https://cdn.prod.website-files.com/6922ebff015a9b454ccf6cf7/692554c2bc9030ac8aeb2689_item_4_2.png')">
+                                <img src="https://cdn.prod.website-files.com/6922ebff015a9b454ccf6cf7/692554c2bc9030ac8aeb2689_item_4_2.png" alt="Accessory">
+                            </div>
+                            <div class="accessory-item" onclick="addAccessory('https://cdn.prod.website-files.com/6922ebff015a9b454ccf6cf7/692554c2bf9fd817d8004f19_item_4_0.png')">
+                                <img src="https://cdn.prod.website-files.com/6922ebff015a9b454ccf6cf7/692554c2bf9fd817d8004f19_item_4_0.png" alt="Accessory">
+                            </div>
+                            <div class="accessory-item" onclick="addAccessory('https://cdn.prod.website-files.com/6922ebff015a9b454ccf6cf7/692554c2dbff2fa448510c97_item_0_2.png')">
+                                <img src="https://cdn.prod.website-files.com/6922ebff015a9b454ccf6cf7/692554c2dbff2fa448510c97_item_0_2.png" alt="Accessory">
+                            </div>
+                            <div class="accessory-item" onclick="addAccessory('https://cdn.prod.website-files.com/6922ebff015a9b454ccf6cf7/692554c2f858b9f666f9e0f3_item_2_3.png')">
+                                <img src="https://cdn.prod.website-files.com/6922ebff015a9b454ccf6cf7/692554c2f858b9f666f9e0f3_item_2_3.png" alt="Accessory">
+                            </div>
+                            <div class="accessory-item" onclick="addAccessory('https://cdn.prod.website-files.com/6922ebff015a9b454ccf6cf7/692554c22d124711ed8cfdbf_item_2_2.png')">
+                                <img src="https://cdn.prod.website-files.com/6922ebff015a9b454ccf6cf7/692554c22d124711ed8cfdbf_item_2_2.png" alt="Accessory">
+                            </div>
+                            <div class="accessory-item" onclick="addAccessory('https://cdn.prod.website-files.com/6922ebff015a9b454ccf6cf7/692554c2199b79dc14b1960c_item_4_3.png')">
+                                <img src="https://cdn.prod.website-files.com/6922ebff015a9b454ccf6cf7/692554c2199b79dc14b1960c_item_4_3.png" alt="Accessory">
+                            </div>
+                            <div class="accessory-item" onclick="addAccessory('https://cdn.prod.website-files.com/6922ebff015a9b454ccf6cf7/692554c260bc799d5bacd992_item_1_2.png')">
+                                <img src="https://cdn.prod.website-files.com/6922ebff015a9b454ccf6cf7/692554c260bc799d5bacd992_item_1_2.png" alt="Accessory">
+                            </div>
+                            <div class="accessory-item" onclick="addAccessory('https://cdn.prod.website-files.com/6922ebff015a9b454ccf6cf7/692554c2f175cb26c3072375_item_1_0.png')">
+                                <img src="https://cdn.prod.website-files.com/6922ebff015a9b454ccf6cf7/692554c2f175cb26c3072375_item_1_0.png" alt="Accessory">
+                            </div>
+                            <div class="accessory-item" onclick="addAccessory('https://cdn.prod.website-files.com/6922ebff015a9b454ccf6cf7/692554c2fcf99666fa320139_item_0_3.png')">
+                                <img src="https://cdn.prod.website-files.com/6922ebff015a9b454ccf6cf7/692554c2fcf99666fa320139_item_0_3.png" alt="Accessory">
+                            </div>
+                            <div class="accessory-item" onclick="addAccessory('https://cdn.prod.website-files.com/6922ebff015a9b454ccf6cf7/692554c24052dd04b1371123_item_3_3.png')">
+                                <img src="https://cdn.prod.website-files.com/6922ebff015a9b454ccf6cf7/692554c24052dd04b1371123_item_3_3.png" alt="Accessory">
+                            </div>
+                            <div class="accessory-item" onclick="addAccessory('https://cdn.prod.website-files.com/6922ebff015a9b454ccf6cf7/692554c2a03663a982266eb8_item_2_0.png')">
+                                <img src="https://cdn.prod.website-files.com/6922ebff015a9b454ccf6cf7/692554c2a03663a982266eb8_item_2_0.png" alt="Accessory">
+                            </div>
+                            <div class="accessory-item" onclick="addAccessory('https://cdn.prod.website-files.com/6922ebff015a9b454ccf6cf7/692554c2c7594ffbda91f4a1_item_3_1.png')">
+                                <img src="https://cdn.prod.website-files.com/6922ebff015a9b454ccf6cf7/692554c2c7594ffbda91f4a1_item_3_1.png" alt="Accessory">
+                            </div>
+                            <div class="accessory-item" onclick="addAccessory('https://cdn.prod.website-files.com/6922ebff015a9b454ccf6cf7/692554c2f2d9b621646baf2b_item_0_1.png')">
+                                <img src="https://cdn.prod.website-files.com/6922ebff015a9b454ccf6cf7/692554c2f2d9b621646baf2b_item_0_1.png" alt="Accessory">
+                            </div>
+                            <div class="accessory-item" onclick="addAccessory('https://cdn.prod.website-files.com/6922ebff015a9b454ccf6cf7/692554c2721d71de7308097f_item_2_1.png')">
+                                <img src="https://cdn.prod.website-files.com/6922ebff015a9b454ccf6cf7/692554c2721d71de7308097f_item_2_1.png" alt="Accessory">
+                            </div>
+                            <div class="accessory-item" onclick="addAccessory('https://cdn.prod.website-files.com/6922ebff015a9b454ccf6cf7/692554c29e9853d93e888da2_item_3_2.png')">
+                                <img src="https://cdn.prod.website-files.com/6922ebff015a9b454ccf6cf7/692554c29e9853d93e888da2_item_3_2.png" alt="Accessory">
+                            </div>
+                            <div class="accessory-item" onclick="addAccessory('https://cdn.prod.website-files.com/6922ebff015a9b454ccf6cf7/692554c2c797f749c230bd91_item_0_0.png')">
+                                <img src="https://cdn.prod.website-files.com/6922ebff015a9b454ccf6cf7/692554c2c797f749c230bd91_item_0_0.png" alt="Accessory">
+                            </div>
+                            <div class="accessory-item" onclick="addAccessory('https://cdn.prod.website-files.com/6922ebff015a9b454ccf6cf7/692554c2230bff70d85d3930_item_3_0.png')">
+                                <img src="https://cdn.prod.website-files.com/6922ebff015a9b454ccf6cf7/692554c2230bff70d85d3930_item_3_0.png" alt="Accessory">
+                            </div>
+                            <div class="accessory-item" onclick="addAccessory('https://cdn.prod.website-files.com/6922ebff015a9b454ccf6cf7/692554c2d3a3d54f0e3f7749_item_1_3.png')">
+                                <img src="https://cdn.prod.website-files.com/6922ebff015a9b454ccf6cf7/692554c2d3a3d54f0e3f7749_item_1_3.png" alt="Accessory">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -946,6 +990,31 @@
             }
         }
         
+        function addAccessory(imageUrl) {
+            const canvas = document.getElementById('memeCanvas');
+            const accessory = document.createElement('img');
+            accessory.src = imageUrl;
+            accessory.style.position = 'absolute';
+            accessory.style.width = '100px';
+            accessory.style.height = '100px';
+            accessory.style.cursor = 'move';
+            accessory.style.userSelect = 'none';
+            accessory.style.top = '50%';
+            accessory.style.left = '50%';
+            accessory.style.transform = 'translate(-50%, -50%)';
+            accessory.className = 'meme-layer';
+            accessory.style.zIndex = '10';
+            
+            accessory.onclick = function(e) {
+                e.stopPropagation();
+                selectLayer(accessory);
+            };
+            
+            canvas.appendChild(accessory);
+            makeDraggable(accessory);
+            selectLayer(accessory);
+        }
+        
         function addText() {
             const canvas = document.getElementById('memeCanvas');
             const text = document.createElement('div');
@@ -963,6 +1032,7 @@
             text.style.left = '50%';
             text.style.transform = 'translate(-50%, -50%)';
             text.className = 'meme-layer';
+            text.style.zIndex = '10';
             
             text.onclick = function(e) {
                 e.stopPropagation();
@@ -1007,6 +1077,15 @@
         function selectLayer(layer) {
             selectedLayer = layer;
             document.getElementById('layerControls').style.display = 'flex';
+            
+            // Update sliders to match current layer
+            if (layer.tagName === 'IMG') {
+                const currentWidth = parseInt(layer.style.width) || 100;
+                document.getElementById('sizeSlider').value = currentWidth;
+            } else {
+                const currentSize = parseInt(layer.style.fontSize) || 32;
+                document.getElementById('sizeSlider').value = (currentSize / 32) * 100;
+            }
         }
         
         function deleteLayer() {
@@ -1020,7 +1099,12 @@
         function updateLayerSize() {
             if (selectedLayer) {
                 const size = document.getElementById('sizeSlider').value;
-                selectedLayer.style.fontSize = (32 * size / 100) + 'px';
+                if (selectedLayer.tagName === 'IMG') {
+                    selectedLayer.style.width = size + 'px';
+                    selectedLayer.style.height = size + 'px';
+                } else {
+                    selectedLayer.style.fontSize = (32 * size / 100) + 'px';
+                }
             }
         }
         
@@ -1099,7 +1183,7 @@
         <h2>JOIN THE ADVENTURE</h2>
         <p style="font-size: 1.3rem; margin-bottom: 2rem;">Follow Feelix's journey</p>
         <div class="social-buttons">
-            <a href="#" class="social-btn">𝕏</a>
+            <a href="https://x.com/Feelixonsolana" target="_blank" class="social-btn">𝕏</a>
             <a href="#" class="social-btn">CHART</a>
         </div>
         <div class="disclaimer">
